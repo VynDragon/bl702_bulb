@@ -1,0 +1,48 @@
+// /delete-node/ &slot0_partition;
+// /delete-node/ &storage_partition;
+//
+// &kh25v80 {
+// 	partitions {
+// 		ranges;
+// 		#address-cells = <1>;
+// 		#size-cells = <1>;
+//
+// 		slot0_partition: partition@2000 {
+// 			compatible = "zephyr,mapped-partition";
+// 			label = "image-0";
+// 			reg = <0x00002000 (0x00200000 - 0x2000)>;
+// 			read-only;
+// 		};
+//
+// 		storage_partition: partition@200000 {
+// 			compatible = "zephyr,mapped-partition";
+// 			label = "storage";
+// 			reg = <0x00200000 0x200000>;
+// 		};
+// 	};
+// };
+//
+// &sram0_bt {
+// 	reg = <0x0 DT_SIZE_K(128)>;
+// 	ranges = <0x0 0x0 DT_SIZE_K(128)>;
+// };
+
+/* Remove A extension */
+&cpu0 {
+	riscv,isa-extensions = "i", "m", "f", "c", "zicsr", "zifencei";
+};
+
+
+&pinctrl {
+	uart0_default_nouart: uart0_default_nouart {
+		group1 {
+			pinmux = <GPIO9_UART0_TX>,
+				 <GPIO15_UART0_RX>;
+		};
+	};
+};
+
+&uart0 {
+	pinctrl-0 = <&uart0_default_nouart>;
+	pinctrl-names = "default";
+};

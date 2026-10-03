@@ -1,0 +1,23 @@
+/*
+ * Copyright (c) 2026 MASSDRIVER EI (massdriver.space)
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+&pinctrl {
+	uart0_default: uart0_default {
+		group1 {
+			pinmux = <GPIO14_UART0_TX>,
+				 <GPIO15_UART0_RX>;
+		};
+	};
+
+	pwm0_default: pwm0_default {
+		group1 {
+			pinmux = <GPIO25_PWM_CH0>,
+				 <GPIO1_PWM_CH1>,
+				 <GPIO2_PWM_CH2>,
+				 <GPIO8_PWM_CH3>,
+				 <GPIO14_PWM_CH4>;
+		};
+	};
+};

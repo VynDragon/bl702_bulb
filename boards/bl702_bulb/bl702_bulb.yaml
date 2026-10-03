@@ -1,0 +1,22 @@
+identifier: bl702_bulb
+name: BL702 Bulb
+type: mcu
+arch: riscv
+ram: 88
+flash: 1500
+toolchain:
+  - zephyr
+testing:
+  ignore_tags:
+    - net
+    - bluetooth
+supported:
+  - gpio
+  - uart
+  - watchdog
+  - entropy
+  - pinctrl
+  - flash
+  - crypto
+  - pwm
+vendor: others

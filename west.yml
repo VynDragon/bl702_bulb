@@ -1,0 +1,28 @@
+manifest:
+  remotes:
+    - name: zephyrproject-rtos
+      url-base: https://github.com/zephyrproject-rtos
+    - name: project-chip
+      url-base: https://github.com/project-chip
+
+  projects:
+    - name: zephyr
+      remote: zephyrproject-rtos
+      revision: main
+      import:
+        name-allowlist:
+          - hal_bouffalolab
+          - openthread
+          - mbedtls
+          - tf-psa-crypto
+    - name: matter
+      url: https://github.com/project-chip/connectedhomeip
+      revision: master
+      path: modules/lib/matter
+      submodules:
+        - path: third_party/editline/repo
+        - path: third_party/jsoncpp/repo
+        - path: third_party/nlassert/repo
+        - path: third_party/nlio/repo
+        - path: third_party/uriparser/repo
+        - path: third_party/pigweed/repo
