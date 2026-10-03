@@ -2,7 +2,7 @@
 
 It is based on the lighting-app matter example, as BL702 is incapable of supporting the all-devices-app firmware.
 
-[image]: https://github.com/VynDragon/bl702_bulb/raw/main/image.png "Image"
+![image](https://github.com/VynDragon/bl702_bulb/raw/main/image.png "Image")
 
 ### Requirements
 
